@@ -108,27 +108,26 @@ class EditarModal extends Component {
     const that = this;
     const { c_contact_id, firstname1, lastname1, selectedDocument, nameDocu, selectedSex, selectedToDay, selectedSector, 
             selectedInfoEce, selectedCompeti, selectedInfoVupe, selectedUrgent, phone1, email, rol, c_bpartner_id,
-            emailCompany, mail_review, nameCompany, phoneCompany, phone2Company, addressCompany } = this.state;
+            emailCompany, mail_review, nameCompany, phoneCompany, phone2Company, addressCompany } = that.state;
    
     //that.setState({ loading: true });
     const { params } = this.props.navigation.state;
     const { session_id, typeUser } = params;
     const UrlUpInfor = typeUser === 'contact' ? `http://aeapi.iflexsoftware.com/contact.json` : `http://aeapi.iflexsoftware.com/contact/bpartner.json`;
-    console.log('selectedToDay ', selectedToDay);
-    console.log((selectedToDay == true) ? 'Y' : 'N');
     if(typeUser==='contact'){
         validUser = {
                 c_contact_id: c_contact_id,
                 session_id: session_id,
-                firstname1: firstname1,
-                lastname1: lastname1,
+                e_today: (selectedToDay === true) ? 'Y' : 'N',
+                firstname1,
+                lastname1,
                 personal_id: nameDocu,
                 personal_id_type: selectedDocument,
                 genere: selectedSex, 
                 e_competivity: selectedCompeti === true ? 'Y' : 'N',
                 e_ece: selectedInfoEce === true ? 'Y' : 'N',
-                e_sector: (!selectedSector === true) ? 'Y' : 'N', 
-                e_today: (!selectedToDay === true) ? 'Y' : 'N',
+                e_sector: (selectedSector === true) ? 'Y' : 'N', 
+                e_today: (selectedToDay === true) ? 'Y' : 'N',
                 e_urgent: selectedUrgent === true ? 'Y' : 'N',
                 e_vupe: selectedInfoVupe === true ? 'Y' : 'N',
                 email1: email,
@@ -216,100 +215,93 @@ class EditarModal extends Component {
     });
   }
 
-  onValueChangeSex(value) {
-    this.setState({
-        selectedSex: value,
-    });
-  }
+    onValueChangeSex(value) {
+        this.setState({
+            selectedSex: value,
+        });
+    }
 
-  onValueChangeDoc = ( value ) => {
-    this.setState({
-        selectedDocument: value,
-    });
-  }
-
-  onValueChangeSector = ( value ) => {
-    this.setState( state =>  ({ selectedSector: value }));
-  }
-
-  onValueChangeEce = (value) => {
-    this.setState(state => ({ selectedInfoEce: value }));
-  }
-
-  onValueChangeCompet = (value) =>{
-    this.setState({
-        selectedCompeti: value,
-    });
-  }
-
-  onValueChangeVupe = (value) => {
-    this.setState({
-        selectedInfoVupe: value,
-    });
-   
-  }
-  
-  onValueChangeUrgent = (value) =>{
-    this.setState({ selectedUrgent: value });
-    
-  }
-
-  handleDocument = (text) => {
-    this.setState({  nameDocu: text })
-  }
-
-  handlePhone = (number) => {
-      this.setState({ phone1: number})
-  }
-
-  handleFirstname = (value) => {
-    this.setState({ firstname1: value})
-  }
-
-  handleLastname = (value) => {
-    this.setState({ lastname1: value})
-  }
-
-  handleEmail = (value) => {
-    this.setState({ email: value})
-  }
-
-  handleEmailCompany = (value) => {
-    this.setState({ emailCompany: value})
-  }
-
-  handleEmailCompanyReview = (value) => {
-    this.setState({ mail_review: value})
-  }
-
-  handleNameCompany = (value) => {
-    this.setState({ nameCompany: value})
-  }
-  
-  handlePhoneCompany = (value ) => {
-    this.setState({ phoneCompany: value})
-  }
-
-  handlePhone2Company = ( value ) => {
-    this.setState({ phone2Company: value})
-  }
-
-  handleAddressCompany = (value) => {
-    this.setState({ addressCompany: value})
-  }
-
-    _handleToggleSwitch = () =>
-        this.setState(state => 
-                ({ switchValue: !state.switchValue,
-        })
-    );
+    onValueChangeDoc = ( value ) => {
+        this.setState({
+            selectedDocument: value,
+        });
+    }
 
     _handleToggleSwitchToDay = (value) => {
         //this.setState(state => ({ selectedToDay: value }))
         console.log('selectedtoday ', value);
         this.setState({ selectedToDay: value  });
-        const { selectedToDay } = this.state;
     };
+
+    onValueChangeSector = ( value ) => {
+        this.setState( state =>  ({ selectedSector: value }));
+      }
+    
+      onValueChangeEce = (value) => {
+        this.setState(state => ({ selectedInfoEce: value }));
+      }
+    
+      onValueChangeCompet = (value) =>{
+        this.setState({
+            selectedCompeti: value,
+        });
+      }
+    
+      onValueChangeVupe = (value) => {
+        this.setState({
+            selectedInfoVupe: value,
+        });
+       
+      }
+      
+      onValueChangeUrgent = (value) =>{
+        this.setState({ selectedUrgent: value });
+        
+      }
+    
+      handleDocument = (value) => {
+        this.setState({ nameDocu: value })
+      }
+    
+      handlePhone = (number) => {
+          this.setState({ phone1: number})
+      }
+    
+      handleFirstname = (value) => {
+        this.setState({ firstname1: value})
+      }
+    
+      handleLastname = (value) => {
+        this.setState({ lastname1: value})
+      }
+    
+      handleEmail = (value) => {
+        this.setState({ email: value})
+      }
+    
+      handleEmailCompany = (value) => {
+        this.setState({ emailCompany: value})
+      }
+    
+      handleEmailCompanyReview = (value) => {
+        this.setState({ mail_review: value})
+      }
+    
+      handleNameCompany = (value) => {
+        this.setState({ nameCompany: value})
+      }
+      
+      handlePhoneCompany = (value ) => {
+        this.setState({ phoneCompany: value})
+      }
+    
+      handlePhone2Company = ( value ) => {
+        this.setState({ phone2Company: value})
+      }
+    
+      handleAddressCompany = (value) => {
+        this.setState({ addressCompany: value})
+      }
 
   render() {
         const { loading, error, messageError, documentID, typeUser } = this.state
@@ -368,6 +360,7 @@ class EditarModal extends Component {
                                         <Left>
                                             <Label >Genero</Label>
                                         </Left>
+                                        
                                         <Picker
                                             mode="dropdown"
                                             iosHeader="Genero"
@@ -382,6 +375,7 @@ class EditarModal extends Component {
                                             <Picker.Item label="Masculino" value="M" />
 
                                         </Picker>
+                                        
                                     </View> 
                                     <View>
                                         <Left>
@@ -395,8 +389,6 @@ class EditarModal extends Component {
                                             style={{ width: undefined }}
                                             selectedValue={ this.state.selectedDocument }
                                             onValueChange={ this.onValueChangeDoc.bind(this) }
-                                            //onChangeText={ this.onValueChangeDoc } 
-
                                             >
                                             {   documentID.map((itemDocument, key)=> {
                                                     return (
@@ -432,14 +424,13 @@ class EditarModal extends Component {
                                         <Right>
                                             <Switch
                                                 //onPress={() => this.updateInfoContact() }
-                                                onValueChange={(value) => this._handleToggleSwitchToDay(value)}
+                                                onValueChange={this._handleToggleSwitchToDay}
                                                 value={this.state.selectedToDay}
                                             />
                                         </Right>
                                     </ListItem>
 
-
-                                     <ListItem>
+                                      <ListItem>
                                         <Left>
                                             <Text>Boletín Sectorial: </Text>
                                         </Left>
@@ -570,6 +561,9 @@ class EditarModal extends Component {
                                     value={ this.state.addressCompany }
                                     />
                             </Item>
+
+
+                                   
                             <Button style={Styles.btnActivar} full 
                                     onPress={() => this.updateInfoContact() }>
                                 <Text>Actualizar Datos</Text>
