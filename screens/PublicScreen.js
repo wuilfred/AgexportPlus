@@ -188,6 +188,8 @@ class PublicScreen extends Component {
     _renderItem = ({item, index}) => {
         const screenWidth = Dimensions.get('window').width;
         //const { onGoDetalle } = this.props
+        const { rol } = this.state;
+
         return(
        
           <Card style={{ borderTopWidth: 1, borderColor: 'white', borderTopWidth: 0}}>
@@ -210,12 +212,17 @@ class PublicScreen extends Component {
                   <Text>{item.location}</Text>
                 </Button>
               </Left>
+              
+            { rol == 'Agexport' && 
                 <Right>
                     <Button iconLeft transparent primary onPress={() => this.openQr(index)}
                         style={{ alignSelf: 'flex-end', marginLeft:10 }}>
                         <Icon name='ios-qr-scanner' /><Text>QR</Text>
                     </Button>
-                </Right>
+                 </Right>
+            }
+
+                
             </CardItem>
           </Card>
         );

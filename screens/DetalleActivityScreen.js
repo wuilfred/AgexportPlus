@@ -196,7 +196,17 @@ class DetalleActivityScreen extends Component {
                             <Text style={{fontWeight: 'bold'}} ><Text>Puntos: </Text>{ rate }</Text>
                         }
 
-                        { rol != 'Establecimiento' && 
+                        { rol != 'Establecimiento' || rol != 'Agexport' &&
+                            <ListItem style={{ alignSelf: 'flex-end', borderBottomWidth:0 }}>
+                                <Text>Asistiré</Text>
+                                <Switch
+                                    style={{ marginLeft:10 }}
+                                    onValueChange={(value) => this.onChangeFunction(activity_code, value)}
+                                    value={this.state.assist}
+                                />
+                            </ListItem>
+                        }
+                        { rol == 'Regular' &&
                             <ListItem style={{ alignSelf: 'flex-end', borderBottomWidth:0 }}>
                                 <Text>Asistiré</Text>
                                 <Switch
@@ -211,6 +221,11 @@ class DetalleActivityScreen extends Component {
                                 onPress={() => this.openMap(latitude, longitude)}
                             >
                                 <Text>Llevarme allí</Text>
+                            </Button>
+                        }
+                         { rol == 'Agexport' && 
+                            <Button success style={{ alignSelf: 'flex-end', marginTop:10 }} onPress={() => this.openQr(activity_code)}>
+                                <Text>Registrar actividad</Text>
                             </Button>
                         }
                

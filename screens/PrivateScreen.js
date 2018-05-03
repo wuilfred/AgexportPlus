@@ -151,6 +151,7 @@ class PrivateScreen extends Component {
 
     _renderItem = ({item, index}) => {
         const screenWidth = Dimensions.get('window').width;
+        const { rol } = this.state;
         //const { onGoDetalle } = this.props
         return(
             <Card style={{ borderTopWidth: 1, borderColor: 'white', borderTopWidth: 0}}>
@@ -173,38 +174,16 @@ class PrivateScreen extends Component {
                   <Text>{item.location}</Text>
                 </Button>
               </Left>
-              <Right>
+              { rol == 'Agexport' && 
+                <Right>
                     <Button iconLeft transparent primary onPress={() => this.openQr(index)}
                         style={{ alignSelf: 'flex-end', marginLeft:10 }}>
                         <Icon name='ios-qr-scanner' /><Text>QR</Text>
                     </Button>
                 </Right>
+              }
             </CardItem>
           </Card>
-            /*<TouchableHighlight>
-                <ListItem button style={{borderBottomWidth: 0}}>
-                    <Thumbnail size={100} source={{uri: item.images[0].url}}  />
-                    <Body style={{ paddingLeft:15 }}>
-                        <Item style={Styles.removeBorder}>
-                            <Icon name="calendar" />
-                            <Text>{item.subject}</Text>
-                        </Item>
-                        <Item style={Styles.removeBorder}>
-                            <Icon name="calendar" />
-                            <Text>{item.datetrx}</Text>
-                        </Item>
-                        <Item style={Styles.removeBorder}>
-                            <Icon name="ios-pin" />
-                            <Text>{item.location}</Text>
-                        </Item>
-                    </Body>
-                    <Right>
-                        <Button light onPress={() => this._goDetalle(index) }>
-                            <Icon active name="arrow-forward" />
-                        </Button>
-                    </Right>
-                </ListItem>
-            </TouchableHighlight>*/
         );
     };
 
