@@ -147,7 +147,10 @@ class DetalleActivityScreen extends Component {
         return(
             <ScrollView
                 contentContainerStyle={{
-                flexGrow: 1,
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                paddingVertical: 20
             }}>
             <Container>
             <Content>
@@ -162,8 +165,8 @@ class DetalleActivityScreen extends Component {
                 <View style={{ flex:1 }}>
 
                         { rol == 'Agexport' && 
-                            <Button success style={{ alignSelf: 'flex-end', marginTop:10 }} onPress={() => this.openQr(activity_code)}>
-                                <Text>QR</Text>
+                            <Button iconLeft success style={{ alignSelf: 'flex-end', marginTop:10, marginBottom: 10}} onPress={() => this.openQr(activity_code)}>
+                                <Icon name='ios-qr-scanner' /><Text>QR</Text>
                             </Button>
                         }
 
@@ -223,12 +226,6 @@ class DetalleActivityScreen extends Component {
                                 <Text>Llevarme allí</Text>
                             </Button>
                         }
-                         { rol == 'Agexport' && 
-                            <Button success style={{ alignSelf: 'flex-end', marginTop:10 }} onPress={() => this.openQr(activity_code)}>
-                                <Text>Registrar actividad</Text>
-                            </Button>
-                        }
-               
                         
                 </View>
                 

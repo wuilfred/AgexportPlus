@@ -138,7 +138,7 @@ class EditarModal extends Component {
             c_bpartner_id,
             session_id,
             email: emailCompany,
-            mail_review: mail_review,
+            mail_review: mail_review === true ? 'Y' : 'N',
             name: nameCompany,
             phone: phoneCompany,
             phone2: phone2Company,
@@ -521,18 +521,11 @@ class EditarModal extends Component {
                                     value={this.state.email}
                                     />
                             </Item>
-                            <Item floatingLabel>
-                                <Icon active name='mail' />
-                                <Label>Confirmar Email</Label>
-                                <Input  
-                                    onChangeText={ this.handleEmailCompanyReview } 
-                                    value={this.state.emailCompany}
-                                    />
-                            </Item>
+                           
                             <Item floatingLabel>
                                 <Icon active name='person' />
                                 <Label>Nombre Compania</Label>
-                                <Input 
+                                <Input editable={false}
                                     onChangeText={ this.handleNameCompany } 
                                     value={this.state.nameCompany}
                                     />
@@ -562,7 +555,18 @@ class EditarModal extends Component {
                                     />
                             </Item>
 
-
+                             <ListItem>
+                                <Left>
+                                    <Text>Deseo Recibir por Correo Física la Revista DataXport: </Text>
+                                </Left>
+            
+                                <Right>
+                                    <Switch
+                                    onValueChange={this.handleEmailCompanyReview}
+                                    value={this.state.mail_review}
+                                    />
+                                </Right>
+                            </ListItem>
                                    
                             <Button style={Styles.btnActivar} full 
                                     onPress={() => this.updateInfoContact() }>
