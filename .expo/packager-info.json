@@ -1,8 +1,8 @@
 {
   "expoServerPort": 19000,
-  "packagerPort": 19003,
-  "packagerPid": 9608,
-  "expoServerNgrokUrl": "https://bv-3qm.wuilfred.appagexport.exp.direct",
-  "packagerNgrokUrl": "https://packager.bv-3qm.wuilfred.appagexport.exp.direct",
-  "ngrokPid": 9633
+  "packagerPort": 19001,
+  "packagerPid": 59495,
+  "expoServerNgrokUrl": "https://uk-deu.wuilfred.appagexport.exp.direct",
+  "packagerNgrokUrl": "https://packager.uk-deu.wuilfred.appagexport.exp.direct",
+  "ngrokPid": 59543
 }

@@ -178,9 +178,9 @@ class RegistroScreen extends Component {
                             </Button>
                             <View style={ Styles.btnRequest }>
                                 <Button
-                                    style={Styles.btnActivar} full
+                                    style={Styles.btnActivarhere} full
                                     onPress={() => this.props.navigation.navigate('Solicitud')}>
-                                    <Text>¿No tiene código? Solicitar Código aquí</Text>
+                                    <Text style={{ textAlign: 'center' }} >¿No tiene código? {'\n'} Solicitar Código aquí </Text>
                                 </Button>
                             </View>
                         </Form>

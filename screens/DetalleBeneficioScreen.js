@@ -85,6 +85,7 @@ class DetalleBeneficioScreen extends Component {
             <ScrollView
                 contentContainerStyle={{
                 flexGrow: 1,
+                justifyContent: 'space-between'
             }}>
             <Container>
             <Content>

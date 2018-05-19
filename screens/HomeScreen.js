@@ -27,20 +27,27 @@ class HomeScreen extends Component {
         type: this.props.type,
     }
 
-    componentDidMount() {
-        AppState.addEventListener('change', this._handleAppStateChange);
+    componentWillUnmount() {
+        console.log('componentWillUnmount', this.appState);
+        AppState.removeEventListener('change', this._handleAppStateChange);
     }
 
-    componentWillUnmount() {
-        AppState.removeEventListener('change', this._handleAppStateChange);
+    componentDidMount() {
+        console.log('componentDidMount', this.appState);
+        AppState.addEventListener('change', this._handleAppStateChange);
+        console.log('componentDidMount2', this.appState);
     }
 
     _handleAppStateChange = (nextAppState) => {
         console.log(nextAppState);
-        if (nextAppState === 'active') {
+        if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
             console.log('App has come to the foreground!');
             this._newSessionID();
-          }
+        }else{
+            console.log('App has gone to background!');
+            // save stuff to storagethis.storeState(); 
+        }
+          this.setState({ appState: nextAppState }); 
         this.setState({appState: nextAppState});
     }
 

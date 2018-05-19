@@ -20,6 +20,13 @@ const Styles = StyleSheet.create({
         backgroundColor:'#09175E',
         marginTop: 20,
     },
+
+    btnActivarhere:{
+        backgroundColor:'#09175E',
+        marginTop: 20,
+        height:60,
+    },
+
     btnRequest:{
         marginTop:30, 
         flex: 1, 
