@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 5311,
-  "expoServerNgrokUrl": "https://eh-72b.wuilfred.appagexport.exp.direct",
-  "packagerNgrokUrl": "https://packager.eh-72b.wuilfred.appagexport.exp.direct",
-  "ngrokPid": 5354
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {Container,Header,Title,Content,Button,Icon,Right,Body,Left,Picker,Form, Item, Input, Label, Toast, 
         View, Text, TextInpu, List, ListItem } from "native-base";
 import Styles from '../utils/Styles';
-import { Switch } from 'react-native';
+import { Switch, KeyboardAvoidingView } from 'react-native';
 //import { Switch } from 'react-native-switch';
-
+//import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { connect } from 'react-redux';
 import { area, newDataValidation, updateDataValidation } from '../actions/contacts';
@@ -51,7 +51,7 @@ class EditarModal extends Component {
     //data enterprice
     c_bpartner_id:      this.props.contact.data.Company.c_bpartner_id,
     emailCompany:       this.props.contact.data.Company.email,
-    mail_review:        this.props.contact.data.Company.mail_review,
+    mail_review:        this.props.contact.data.Company.mail_review === 'Y' ? true : false,
     nameCompany:        this.props.contact.data.Company.name,
     phoneCompany:       this.props.contact.data.Company.phone,
     phone2Company:      this.props.contact.data.Company.phone2,
@@ -337,6 +337,8 @@ class EditarModal extends Component {
                         <Right />
                     </Header>
                     <Content style={Styles.backgroundContainer}>
+                    <KeyboardAvoidingView behavior="padding" style={{flex: 1}}>
+
                     <View style={ Styles.paddingLRT20 }>
                     
                         <List>
@@ -577,6 +579,7 @@ class EditarModal extends Component {
                         </List>
                        
                     </View>
+                    </KeyboardAvoidingView>
                     </Content>
                 </Container>
         );
