@@ -149,8 +149,8 @@ class BeneficioScreen extends Component {
         const { rol } = this.state;
         //const { onGoDetalle } = this.props
         return(
+            
             <TouchableHighlight>
-            <Content>
               <Card>
                 <CardItem>
                   <Left>
@@ -181,7 +181,6 @@ class BeneficioScreen extends Component {
                     </Right>
                 </CardItem>
               </Card>
-            </Content>
           </TouchableHighlight>
         );
     };
