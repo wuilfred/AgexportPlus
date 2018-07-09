@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppState, StyleSheet, View } from 'react-native';
+import { AppState, StyleSheet, View, Image } from 'react-native';
 import { Button, Body, Left, Right, Container, Content, Form, Item, Icon, Input, Label, List, ListItem, Spinner, Text, Toast, Thumbnail } from 'native-base';
 import Styles from '../utils/Styles';
 
@@ -37,42 +37,14 @@ class ProgramaBeneficiosScreen extends Component {
 			)
 		}
         return(
-            <Container>
-                <Content style={Styles.backgroundContainer}>
-                    <View style={{ padding: 10 }}>
-                        <Text>
-                            Programa de fidelización que brinda al asociado, la oportunidad de obtener descuentos y beneficios exclusivos de AGEXPORT y sus aliados.
-                        </Text>
-                    </View>
-                    <View style={{ padding: 10 }}>
-                        <Text>
-                            En este programa  obtendrás los siguientes beneficios:
+            <Container style={{backgroundColor: 'white'}} >
+                <View style={{alignItems: 'center', height: 435}}>
+                    <Image 
+                        style={{flex: 1, resizeMode: 'contain'}}
+                        source={ require('../assets/programabeneficios.png') }
 
-                        </Text>
-                    </View>
-                    <View style={{ padding: 10 }}>
-                        <List>
-                            <ListItem>
-                                <Text>1. Capacitaciones </Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>2. Descuentos especiales en servicios AGEXPORT</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>3. Descuentos en establecimientos aliados</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>4. Eventos especiales de Networking</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>5. Acceso VIP a SYU y ofertas exclusivas para asociados.</Text>
-                            </ListItem>
-                            <ListItem>
-                                <Text>6. Acumulación de puntos por participar en actividades AGEXPORT.</Text>
-                            </ListItem>
-                        </List>
-                    </View>
-                </Content>
+                    />
+                </View>
             </Container>
         )
     }

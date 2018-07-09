@@ -111,9 +111,9 @@ class DetalleBeneficioScreen extends Component {
                         
                          <Text><Text style={{fontWeight: 'bold'}}>Categoría: </Text>{ vendor_category }</Text>
 
-                        <Text><Text style={{fontWeight: 'bold'}}>Descripción: </Text> { description } {"\n"}</Text>
+                        <Text><Text style={{fontWeight: 'bold'}}>Beneficio: </Text> { description } {"\n"}</Text>
 
-                         <Text><Text style={{fontWeight: 'bold'}}>Observaciones: </Text> { observations } {"\n"}</Text>
+                         <Text><Text style={{fontWeight: 'bold'}}>Descripción: </Text> { observations } {"\n"}</Text>
 
                         <Text><Text style={{fontWeight: 'bold'}}>Expira: </Text>{ dateto}  {"\n"} </Text>
 

@@ -203,13 +203,14 @@ class PublicScreen extends Component {
                 </Body>
               </Left>
             </CardItem>
-            <CardItem style={{flex:0, height: 0, marginBottom: 10}}>
+            <CardItem style={{flex:1, flexDirection: 'row'}}>
               <Left>
-                <Button transparent textStyle={ {color: '#87838B' }}
+                <Button transparent textStyle={{flex:1, color: '#87838B', marginTop: 10, marginBottom: 10}}
                         success style={{ alignSelf: 'flex-end' }}
                         onPress={() => this.openMap(index)}>
                   <Icon name="ios-pin"  />
-                  <Text>{item.location}</Text>
+                  
+                  <Text style={{flexDirection: 'row' }} numberOfLines={2}> {item.location}</Text>
                 </Button>
               </Left>
               
