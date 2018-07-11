@@ -52,7 +52,7 @@ const HomeStack = StackNavigator({
         headerBackTitle: null,
         headerTitleStyle:{
             textAlign: 'center',
-            color: '#FFF'
+            color: '#FFFFFF'
         },
         headerTintColor:'#FFF',
         headerRight:<Button transparent light onPress={() => navigation.navigate('DrawerOpen')}>
@@ -105,8 +105,7 @@ const BeneficioStack = StackNavigator({
         },
         headerBackTitle: null,
         headerTitleStyle:{
-            textAlign: 'center',
-            color: '#FFF'
+            textAlign: 'center'
         },
         headerTintColor:'#FFF',
         headerRight:<Button transparent light onPress={() => navigation.navigate('DrawerOpen')}>
@@ -128,8 +127,7 @@ const ListActivities = TabNavigator({
             backgroundColor: '#101474',
         },
         indicatorStyle:{
-            color: '#FFF',
-            backgroundColor: '#FFF'
+            backgroundColor: '#FFFFFF'
         }
     },
 });
@@ -139,7 +137,7 @@ const ActivitiesStack = StackNavigator({
     DetalleActivity: { screen: DetalleActivityScreen }
 },{
     cardStyle:{
-        backgroundColor: '#FFF'
+        backgroundColor: '#FFFFFF'
     },
     navigationOptions: ({ navigation }) => ({
         //headerTitle: 'Agexport+',
@@ -149,10 +147,9 @@ const ActivitiesStack = StackNavigator({
             backgroundColor: '#0A1040',
         },
         headerTitleStyle:{
-            textAlign: 'center',
-            color: '#FFF'
+            textAlign: 'center'
         },
-        headerTintColor:'#FFF',
+        headerTintColor:'#FFFFFF',
         headerRight:<Button transparent light onPress={() => navigation.navigate('DrawerOpen')}>
                     <Icon style={{ color: 'white' }} name='menu' />
         </Button>,
@@ -185,17 +182,16 @@ const AppStack = TabNavigator(listadoTabs, {
     swipeEnabled: false,
     tabBarOptions: {
         showIcon:true,
-        activeTintColor: '#FFF',
+        activeTintColor: '#FFFFFF',
         inactiveTintColor: '#bdc3c7',
         style: {
             backgroundColor: '#0A1040',
         },
         indicatorStyle:{
-            color: '#FFF',
-            backgroundColor: '#FFF'
+            backgroundColor: '#FFFFFF'
         },
         iconStyle:{
-            color: '#FFF',
+            color: '#FFFFFF',
         }
     },
     navigationOptions: ({ navigation }) => ({
@@ -243,7 +239,7 @@ const AuthStack = StackNavigator({
         },
         headerTitleStyle:{
             textAlign: 'center',
-            color: '#FFF'
+            color: '#FFFFFF'
         }
     })
 });

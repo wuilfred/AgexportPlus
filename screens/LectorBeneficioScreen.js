@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000',
+      backgroundColor: '#000000',
     },
     bottomBar: {
       position: 'absolute',
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
       flex: 1,
     },
     urlText: {
-      color: '#fff',
+      color: '#FFFFFF',
       fontSize: 20,
     },
     cancelButton: {

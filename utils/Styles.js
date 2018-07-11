@@ -5,7 +5,7 @@ const Styles = StyleSheet.create({
         alignItems:'center'
     },
     backgroundContainer: {
-        backgroundColor:'#FFF'
+        backgroundColor:'#FFFFFF'
     },
     paddingLR20:{
         paddingLeft: 20, 
@@ -52,7 +52,7 @@ const Styles = StyleSheet.create({
         backgroundColor: '#0A1040',
     },
     colorStyle:{
-        color: '#FFF'
+        color: '#FFFFFF'
     },
     closeButtonHeader:{
         fontSize: 40,

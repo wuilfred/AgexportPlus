@@ -3,3 +3,5 @@
 node_modules/
 *.expo
 *.DS_Store
+*.expo/packager-info.json
+*.expo/settings.json
